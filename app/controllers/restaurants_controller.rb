@@ -5,6 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @reservations = Reservation.where('restaurant_id=?', @restaurant)
   end
 
 end
