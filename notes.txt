@@ -56,7 +56,7 @@ Who will be using our application?
 What constraints (time, budget, etc) are we operating under?
 - time: 3 days
 - budget: n/a
-- skills/tools: ROR, google api,
+- skills/tools: ROR, google api, psql
 
 What features are absolutely necessary?
 - reserving a time at a particular restaurant
