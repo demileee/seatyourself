@@ -30,9 +30,9 @@
       </li>
       <% if current_user %>
       <li class="nav-item padding-for-nav">Welcome <%= current_user.name %>!</li>
-      <li class="nav-item"><%= link_to "Log out", sessions_path, :method => :delete, :class => 'nav-link' %></li>
-      <li class="nav-item padding-for-nav"><%= link_to "Add Reservation", :class => 'nav-link' %></li>
-      <li class="nav-item padding-for-nav"><%= link_to 'Settings', :class => 'nav-link' %></li>
+
+      <li class="nav-item padding-for-nav"><%= link_to "My Reservations", user_user_reservations_path(current_user.id) %></li>
+      <li class="nav-item padding-for-nav"><%= link_to 'Settings', user_path(current_user.id) %></li>
       <% else %>
       <li class="nav-item padding-for-nav"><%= link_to "Log in", new_sessions_path, :class => 'nav-link' %></li>
       <li class="nav-item padding-for-nav"><%= link_to "Sign up", new_user_path, :class => 'nav-link' %></li>
