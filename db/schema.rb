@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20171024152444) do
     t.string   "name"
     t.string   "email"
     t.text     "notes"
+    t.string   "phone"
+    t.string   "pic_url"
     t.integer  "restaurant_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

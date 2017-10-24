@@ -5,6 +5,8 @@ class CreateReservations < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :email
       t.text :notes
+      t.string :phone
+      t.string :pic_url
       t.integer :restaurant_id
 
       t.timestamps
