@@ -3,27 +3,28 @@
 <p><%= @restaurant.description %></p>
 
 
+<div class="form-group">
 <%= form_for :reservation, url: restaurant_reservations_path(params[:id]) do |f| %>
 
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label "Date" %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date, class: 'form-control'  %>
 
   <%= f.label :time %>
-  <%= f.time_field :time %>
+  <%= f.time_select :time, class: 'form-control', minute_step: 15  %>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, class: 'form-control'  %>
 
   <%= f.label :notes %>
-  <%= f.text_field :notes %>
+  <%= f.text_field :notes, class: 'form-control'  %>
 
-  <%= f.submit %>
+  <%= f.submit 'Make Reservation', :class => 'btn btn-primary' %>
 
 <% end %>
-
+</div>
 <% @reservations.each do |reservation| %>
   <ul>
     <li><%= reservation.name %> <%= dateformat(reservation.date_time) %></li>
