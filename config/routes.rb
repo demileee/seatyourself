@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :user_reservations, only: %i(index destroy edit update)
     #had to create unique "user_reservations" controller,
     #otherwise restaurant_reservations and user_reservations share same controller#action
+    resources :user_restaurants, only: %i(index)
   end
   resource :sessions, only: [:create, :new, :destroy]
 end

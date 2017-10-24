@@ -1,0 +1,17 @@
+<h2>my restaurants</h2>
+<ul style="list-style: none;">
+<% @restaurants.each do |restaurant| %>
+  <li>
+    <h2><%= restaurant.name %></h2>
+    <p><%= restaurant.address %></p>
+    <p><%= restaurant.description %></p>
+    <% restaurant.reservations.each do |reservation| %>
+    <p><%= dateformat(reservation.date_time) %> | <%= reservation.name %></p>
+
+    <% end %>
+    </p>
+
+
+  </li>
+<% end %>
+</ul>

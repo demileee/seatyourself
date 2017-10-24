@@ -32,6 +32,9 @@
       <li class="nav-item padding-for-nav">Welcome <%= current_user.name %>!</li>
 
       <li class="nav-item padding-for-nav"><%= link_to "My Reservations", user_user_reservations_path(current_user.id) %></li>
+      <% if current_user.role == 'owner' %>
+      <li class="nav-item padding-for-nav"><%= link_to "My Restaurants", user_user_restaurants_path(current_user.id) %></li>
+      <% end %>
       <li class="nav-item padding-for-nav"><%= link_to 'Settings', user_path(current_user.id) %></li>
       <% else %>
       <li class="nav-item padding-for-nav"><%= link_to "Log in", new_sessions_path, :class => 'nav-link' %></li>
