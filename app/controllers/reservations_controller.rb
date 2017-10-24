@@ -16,8 +16,13 @@ include ReservationsHelper
     @reservation.restaurant_id = params[:restaurant_id]
     @reservation.date_time = datetime(params[:reservation][:date], params[:reservation]["time(4i)"], params[:reservation][":time(5i)"])
 
-    @reservation.save
-
+    if @reservation.save
+      flash[:success] = 'Reservation created'
+      redirect_to "/restaurants/#{@reservation.restaurant_id}"
+    else
+      flash[:alert] = 'Please verify the information'
+      redirect_to "/restaurants/#{@reservation.restaurant_id}"
+    end
   end
 
 end
