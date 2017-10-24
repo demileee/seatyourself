@@ -1,10 +1,9 @@
 MUST HAVE
-As a visitor, when I go to the homepage, I am presented with a list of restaurants.
-As a visitor, I have the option of making a reservation.
++ As a visitor, when I go to the homepage, I am presented with a list of restaurants.
++ As a visitor, I have the option of making a reservation.
 
 
 SHOULD HAVE
-As a visitor, I do not have the option of making a reservation without logging in.
 As a visitor, when I click on a restaurant, I am presented with:
   address
   neighbourhood
@@ -73,3 +72,46 @@ What features are unique to your app, and what features can be supplied by exist
 
 ENTITY-RELATIONSHIP DIAGRAM
 https://docs.google.com/spreadsheets/d/1g5xzeA7XAuC8aut6cqAyEj159vHz46g3fcTlFQdXpM4/edit?usp=sharing
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
++++ add validations + errors for current form
++++ create session
++++ create user model
++++++++ validations
++++++++ roles: visitor, owner + authorization
++++++++ user show page w/ all reservations
++++ constraints for creating restaurant + reservation
++++ confirmation message per reservation made
+
+Sessions(def new, create, destroy)
+
+User(show, new, create, edit, update)
+  -> name
+  -> email
+  -> role
+    -> visitor
+      - add, edit, destroy their own reservations
+    -> owner
+      - add, edit, destroy their own restaurant
+  -> phone
+  -> food
+
+Reservation(+edit, update, destroy)
+  -> +user_id
+  ----> Restaurants has_many :users, through: :reservations
+  -> party_size
+  -> in create,
+    ->time: if there is where? true for same date_time
+    ->capacity: if ... <= available_capacity
+    ->party_size <= max_seats
+
+
+Restaurant(+new, create, edit, update, destroy)
+  -> +user_id (owners)
+  -> price range
+  -> hours
+  -> max_tables
+  -> max_seats
