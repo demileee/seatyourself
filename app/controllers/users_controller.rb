@@ -24,11 +24,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(user_params)
+    @user = User.find(params[:id])
     @user.update(user_params)
 
     if @user
-      redirect_to new_session_path
+      redirect_to user_path(@user.id)
     else
       flash[:alert] = "Update unsuccessful."
       render :new

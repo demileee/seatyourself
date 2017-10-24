@@ -1,0 +1,10 @@
+<h1>Your Reservations</h1>
+<% @reservations.each do |reservation| %>
+<ul>
+  <li>
+    <%= dateformat(reservation.date_time) %><br />
+    <%= reservation.restaurant.name %><br />
+    <%= reservation.restaurant.address %>
+  </li>
+</ul>
+<% end %>

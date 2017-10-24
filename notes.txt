@@ -74,7 +74,7 @@ ENTITY-RELATIONSHIP DIAGRAM
 https://docs.google.com/spreadsheets/d/1g5xzeA7XAuC8aut6cqAyEj159vHz46g3fcTlFQdXpM4/edit?usp=sharing
 QUESTIONS???????
 - should we have a separate table for owners
-- how can we avoid having user_id twice 
+- how can we avoid having user_id twice
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -104,6 +104,9 @@ User(show, new, create, edit, update)
 Reservation(+edit, update, destroy)
   -> +user_id
   ----> Restaurants has_many :users, through: :reservations
+
+
+  
   -> party_size
   -> in create,
     ->time: if there is where? true for same date_time
@@ -113,6 +116,9 @@ Reservation(+edit, update, destroy)
 
 Restaurant(+new, create, edit, update, destroy)
   -> +user_id (owners)
+
+
+
   -> price range
   -> hours
   -> max_tables

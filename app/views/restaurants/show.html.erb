@@ -5,9 +5,3 @@
 <p><%= @restaurant.description %></p>
 
 <%= render 'reservations/form' %>
-
-<% @reservations.each do |reservation| %>
-  <ul>
-    <li><%= reservation.name %> <%= dateformat(reservation.date_time) %></li>
-  </ul>
-<% end %>
