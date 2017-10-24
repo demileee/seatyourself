@@ -22,4 +22,4 @@ User.create(name: 'Arthur', email: 'owner@owner.com', role: 'owner' ,phone: '647
 Reservation.create(date_time: Time.now , name: 'Ari' , email: 'dj.giro@gmail.com', notes: 'I better not have to wait!', user_id: 1, restaurant_id: 1)
 Reservation.create(date_time: Time.now + 3.hours , name: 'Demi' , email: 'dm@dm.com' , notes: 'No notes', user_id: 2, restaurant_id: 2)
 Reservation.create(date_time: Time.now + 1.5.days , name: 'Horacio' , email: 'ho@ho.com', notes: 'I better not have to wait!', user_id: 3, restaurant_id: 3)
-Reservation.create(date_time: Time.now + 15.min , name: 'bob' , email: 'bob@bob.com', notes: 'Ahahaahaha!', restaurant_id: 4)
+Reservation.create(date_time: Time.now + 15.minutes , name: 'bob' , email: 'bob@bob.com', notes: 'Ahahaahaha!', restaurant_id: 4)
