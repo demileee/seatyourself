@@ -72,7 +72,9 @@ What features are unique to your app, and what features can be supplied by exist
 
 ENTITY-RELATIONSHIP DIAGRAM
 https://docs.google.com/spreadsheets/d/1g5xzeA7XAuC8aut6cqAyEj159vHz46g3fcTlFQdXpM4/edit?usp=sharing
-
+QUESTIONS???????
+- should we have a separate table for owners
+- how can we avoid having user_id twice 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
