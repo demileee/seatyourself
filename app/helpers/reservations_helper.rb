@@ -1,8 +1,12 @@
 module ReservationsHelper
 
-  def datetime(date, time)
+  def datetime(date, hour, min)
     d = Date.parse(date)
-    t = Time.parse(time)
+    time = []
+    time << hour
+    time << min
+    time.join(" ")
+    t = Time.parse(time[0])
     dt = DateTime.new(d.year, d.month, d.day, t.hour, t.min, t.sec, t.zone)
     return dt
   end

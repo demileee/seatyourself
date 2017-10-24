@@ -14,7 +14,7 @@ include ReservationsHelper
     @reservation.email = params[:reservation][:email]
     @reservation.notes = params[:reservation][:notes]
     @reservation.restaurant_id = params[:restaurant_id]
-    @reservation.date_time = datetime(params[:reservation][:date], params[:reservation][:time])
+    @reservation.date_time = datetime(params[:reservation][:date], params[:reservation]["time(4i)"], params[:reservation][":time(5i)"])
 
     @reservation.save
 
