@@ -1,8 +1,12 @@
 <% if current_user %>
-        Signed in as <%= current_user.email %> <%= link_to "Create Restaurant", new_restaurant_path%> <div class = 'logout'> <%= link_to "Log out", sessions_path, :method => :delete %></div>
-      <% else %>
-        <%= link_to "Log in", new_sessions_path %> or <%= link_to "Sign up", new_user_path %>
-      <% end %>
+  Signed in as <%= current_user.email %>
+  <% if current_user.role == 'owner'%>
+  <%= link_to "Create Restaurant", new_restaurant_path%>
+  <% end %>
+  <div class = 'logout'> <%= link_to "Log out", sessions_path, :method => :delete %></div>
+<% else %>
+  <%= link_to "Log in", new_sessions_path %> or <%= link_to "Sign up", new_user_path %>
+<% end %>
 
 <h1>All restaurants</h1>
 
