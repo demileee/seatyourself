@@ -1,3 +1,7 @@
+<% if current_user &&  current_user.role == 'owner'%>
+  <%= link_to "Create Restaurant", new_restaurant_path%>
+<% end %>
+
 <h1>All restaurants</h1>
 
 <ul>
