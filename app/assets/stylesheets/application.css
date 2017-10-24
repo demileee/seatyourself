@@ -16,3 +16,19 @@
 main {
   margin: 10px;
 }
+nav {
+  padding-left: 20px;
+}
+.nav_item {
+  display: inline-block;
+  padding: .5rem 1rem;
+}
+
+.navbar-nav {
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.padding-for-nav {
+  padding: .5rem 1rem;
+}
