@@ -104,7 +104,7 @@ QUESTIONS???????
 Reservation(+edit, update, destroy)
   √ -> +user_id
   ----> Restaurants has_many :users, through: :reservations
-
+    -> delete and edit
 
 
   -> party_size
@@ -116,7 +116,7 @@ Reservation(+edit, update, destroy)
 
 Restaurant(+new, create, edit, update, destroy)
   √ -> +user_id (owners)
-
+    -> delete and edit
 
 
   -> price range
