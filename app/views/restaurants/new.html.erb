@@ -1,0 +1,26 @@
+<%= link_to "Home", root_url %>
+
+<h1>Create Restaurant</h1>
+
+<div class="form-group">
+<%= form_for @restaurant do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control'  %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control', minute_step: 15  %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control'  %>
+
+  <%= f.label :pic_url %>
+  <%= f.text_field :pic_url, class: 'form-control'  %>
+
+  <%= f.submit 'Make Restaurant', :class => 'btn btn-primary' %>
+
+<% end %>
+</div>
