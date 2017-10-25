@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :user_restaurants, only: %i(index)
   end
   resource :sessions, only: [:create, :new, :destroy]
+  resources :results, only: [:index]
 end

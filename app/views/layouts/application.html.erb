@@ -15,14 +15,14 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
-      <form class="ml-3 my-auto d-inline">
-          <div class="input-group">
-            <input type="text" class="form-control border-right-0" placeholder="...">
-            <span class="input-group-btn">
-              <button class="btn btn-outline border-left-0" type="button">Search</button>
-            </span>
-          </div>
-      </form>
+          <%= form_for :search, class: 'ml-3 my-auto d-inline', url: results_path, method: :get do |f| %>
+            <div class="input-group">
+              <%= f.text_field :input, class:"form-control border-right-0", placeholder:"..." %>
+              <span class="input-group-btn">
+                <%= f.submit class:"btn btn-outline border-left-0", value: "Search" %>
+              </span>
+            </div>
+          <% end %>
         <ul class="navbar-nav ml-auto">
           <% if current_user %>
             <li class="nav-item active">
