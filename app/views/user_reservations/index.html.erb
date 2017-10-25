@@ -1,10 +1,21 @@
 <h1>Your Reservations</h1>
 <% @reservations.each do |reservation| %>
-<ul>
-  <li>
-    <%= dateformat(reservation.date_time) %><br />
-    <%= reservation.restaurant.name %><br />
-    <%= reservation.restaurant.address %>
-  </li>
-</ul>
+<div class="card text-center" style="max-width: 30%; float: left; margin: 10px; display: inline-block;">
+
+  <!-- Heading -->
+  <div class="card-body">
+  <h4 class="card-title"><%= link_to reservation.restaurant.name, restaurant_path(reservation.restaurant.id), :class => 'restaurant_name' %></h4>
+  <h6 class="card-subtitle text-muted"><%= dateformat(reservation.date_time) %></h6>
+  </div>
+
+  <!-- Image -->
+  <%= link_to image_tag(reservation.restaurant.pic_url), restaurant_path(reservation.restaurant.id), alt: "#{reservation.restaurant.name}", :class => 'card_image' %>
+
+  <!-- Text Content -->
+  <div class="card-body">
+  <p class="card-text"><%= reservation.restaurant.description %></p>
+  <%= link_to 'Cancel!', restaurant_path(reservation.restaurant.id), :class => 'btn btn-danger' %> | <%= link_to 'Edit!', restaurant_path(reservation.restaurant.id), :class => 'btn btn-primary' %>
+  </div>
+
+</div>
 <% end %>
