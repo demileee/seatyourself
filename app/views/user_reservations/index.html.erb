@@ -14,7 +14,7 @@
   <!-- Text Content -->
   <div class="card-body">
   <p class="card-text"><%= reservation.restaurant.description %></p>
-  <%= link_to 'Cancel!', restaurant_path(reservation.restaurant.id), :class => 'btn btn-danger' %> | <%= link_to 'Edit!', restaurant_path(reservation.restaurant.id), :class => 'btn btn-primary' %>
+  <%= link_to 'Cancel', user_user_reservation_path(@user.id, reservation.id), :class => 'btn btn-danger', method: :delete, :data => {:confirm => ("Are you sure?")}  %>  <%= link_to 'Edit', edit_user_user_reservation_path(@user.id, reservation.id), :class => 'btn btn-primary'%>
   </div>
 
 </div>

@@ -8,9 +8,8 @@ include ApplicationHelper
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @reservation = @user.reservations.find(params[:id])
-
+    @user = User.find_by("id = ?", params[:user_id])
+    @reservation = @user.reservations.find_by("id = ?", params[:id])
   end
 
   def update
@@ -20,7 +19,7 @@ include ApplicationHelper
     @reservation.date_time = datetime(params[:res][:date], params[:res]["time(4i)"], params[:res]["time(5i)"])
     if @reservation.save
       flash[:success] = 'Reservation updated'
-      redirect_to edit_user_user_reservation_path(params[:user_id], params[:id])
+      redirect_to user_user_reservations_path(params[:user_id])
     else
       flash[:alert] = 'Please verify the information'
       redirect_to edit_user_user_reservation_path(params[:user_id], params[:id])
@@ -29,9 +28,13 @@ include ApplicationHelper
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @reservation = @user.reservations.find(params[:id])
-    @reservation.destroy
+    @user = User.find_by("id = ?", params[:user_id])
+    puts "?!?!?!?!??!?!?!?!!?!?!?!?!?!"
+    puts @user.inspect
+    @reservation = @user.reservations.find_by("id = ?", params[:id])
+    puts "?!?!?!?!??!?!?!?!!?!?!?!?!?!"
+    puts @user.reservations.first.inspect
+    @reservation.delete
     redirect_to user_user_reservations_path(params[:user_id])
   end
 
