@@ -4,7 +4,7 @@
   <% end %>
   </h2>
 <% @restaurants.each do |restaurant| %>
-<% if restaurant.reservations.present? %>
+<!-- <%# if restaurant.reservations.present? %> -->
 <table class="table" style="width: 60%;">
   <tr>
     <td style="padding: 0;">
@@ -19,8 +19,8 @@
         <p class="card-title-restaurant">
           <%= restaurant.address %>
           <br>
-          <%= link_to 'Edit', edit_restaurant_path(restaurant.id) %>
-          <%= link_to "Delete", restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"} %>
+          <%= link_to 'Edit', edit_restaurant_path(restaurant.id), :class => 'card-buttons' %>
+          <%= link_to "Delete", restaurant_path(restaurant.id), method: :delete, data: {confirm: "Are you sure you want to delete this restaurant?"}, :class => 'card-buttons' %>
         </p>
       </div>
     </td>
@@ -50,4 +50,4 @@
 </table>
 
 <% end %>
-<% end %>
+<!-- <%# end %> -->

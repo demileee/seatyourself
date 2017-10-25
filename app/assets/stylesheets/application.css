@@ -72,6 +72,12 @@ a.restaurant_name {
 .alert {
   margin: 0;
 }
+
+.card-buttons {
+  background: white;
+  margin-top: 5px;
+  padding: 4px 10px;
+}
 /*nav {
   padding-left: 20px;
 }
