@@ -78,15 +78,17 @@ QUESTIONS???????
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-+++ add validations + errors for current form
+√ +++ add validations + errors for current form
 
 √ +++ create session
 √ +++ create user model
-+++++++ validations
-+++++++ roles: visitor, owner + authorization
+√ +++++++ validations
+√ +++++++ roles: visitor, owner + authorization
 √ +++++++ user show page w/ all reservations
+
 +++ constraints for creating restaurant + reservation
-+++ confirmation message per reservation made
+
+√ +++ confirmation message per reservation made
 
 √ Sessions(def new, create, destroy)
 
