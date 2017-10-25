@@ -1,11 +1,21 @@
 <h1>All restaurants</h1>
+<% @restaurants.each do |restaurant| %>
+<div class="card text-center" style="max-width: 30%; float: left; margin: 10px; display: inline-block;">
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li>
-      <h2><%= restaurant.name %> | <%= link_to 'Reserve now!', restaurant_path(restaurant.id) %></h2>
-      <p><%= restaurant.address %></p>
-      <p><%= restaurant.description %></p>
-    </li>
+  <!-- Heading -->
+  <div class="card-body">
+  <h4 class="card-title"><%= restaurant.name %></h4>
+  <h6 class="card-subtitle text-muted"><%= restaurant.address %></h6>
+  </div>
+
+  <!-- Image -->
+  <img style="max-width: 100%;" src="<%= restaurant.pic_url %>" alt="<%= restaurant.name %>">
+
+  <!-- Text Content -->
+  <div class="card-body">
+  <p class="card-text"><%= restaurant.description %></p>
+  <%= link_to 'Reserve now!', restaurant_path(restaurant.id), :class => 'btn btn-primary' %>
+  </div>
+
+</div>
   <% end %>
-</ul>
