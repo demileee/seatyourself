@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Restaurant.create(name: 'Tai me Tail', address: '44 Queen St. West | Toronto ON', description: 'Great Tai Restaurant', phone: '416-555-1234', pic_url: 'https://www.rosasthaicafe.com/wp-content/uploads/2016/10/rosas-latest-recipes-867x520.jpg', user_id: 4 )
+Restaurant.create(name: 'Thai me Tail', address: '44 Queen St. West | Toronto ON', description: 'Great Thai Restaurant', phone: '416-555-1234', pic_url: 'https://www.rosasthaicafe.com/wp-content/uploads/2016/10/rosas-latest-recipes-867x520.jpg', user_id: 4 )
 Restaurant.create(name: 'Burrito Loco', address: '344 King St. West | Toronto ON', description: 'Great Mexican food', phone: '416-555-1234', pic_url: 'https://img.grouponcdn.com/deal/iJVvZzL5wXt2WdwKgQhLgN/186347703-3642x2185/v1/c700x420.jpg', user_id: 1)
 Restaurant.create(name: 'Asahi Restaurant', address: '192 Yonge St. | Toronto ON', description: 'Sushi food restaurant', phone: '416-555-1234', pic_url: 'https://img.grouponcdn.com/deal/hfefAup1zQWBE2K8sWURgS27xax/hf-846x508/v1/c700x420.jpg', user_id: 4)
 Restaurant.create(name: 'Cooper\'s', address: '444 Adelaide St. | Toronto ON', description: 'Brunch Restaurant', phone: '416-555-1234', pic_url: 'http://www.zannavandijk.co.uk/wp-content/uploads/2017/05/PA060081.c704a3-2.jpg', user_id: 4)

@@ -14,11 +14,19 @@ include ApplicationHelper
 
   def edit
     @user = User.find_by("id = ?", params[:user_id])
+    if current_user.id != @user.id
+      flash[:alert] = 'Not authorized user'
+      redirect_to root_url
+    end
     @reservation = @user.reservations.find_by("id = ?", params[:id])
   end
 
   def update
     @user = User.find(params[:user_id])
+    if current_user.id != @user.id
+      flash[:alert] = 'Not authorized user'
+      redirect_to root_url
+    end
     @reservation = @user.reservations.find(params[:id])
     @reservation.update_attributes(reservation_params)
     @reservation.date_time = datetime(params[:res][:date], params[:res]["time(4i)"], params[:res]["time(5i)"])
@@ -34,11 +42,11 @@ include ApplicationHelper
 
   def destroy
     @user = User.find_by("id = ?", params[:user_id])
-    puts "?!?!?!?!??!?!?!?!!?!?!?!?!?!"
-    puts @user.inspect
+    if current_user.id != @user.id
+      flash[:alert] = 'Not authorized user'
+      redirect_to root_url
+    end
     @reservation = @user.reservations.find_by("id = ?", params[:id])
-    puts "?!?!?!?!??!?!?!?!!?!?!?!?!?!"
-    puts @user.reservations.first.inspect
     @reservation.delete
     redirect_to user_user_reservations_path(params[:user_id])
   end

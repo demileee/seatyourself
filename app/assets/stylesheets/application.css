@@ -115,6 +115,10 @@ a.restaurant_name {
 
 .banner-img img {
   width: 100%;
+.card-buttons {
+  background: white;
+  margin-top: 25px;
+  padding: 4px 10px;
 }
 /*nav {
   padding-left: 20px;
