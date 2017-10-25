@@ -1,21 +1,24 @@
-<h1>All restaurants</h1>
-<% @restaurants.each do |restaurant| %>
-<div class="card text-center" style="max-width: 30%; float: left; margin: 10px; display: inline-block;">
+<section>
+  <h1>All restaurants</h1>
+  <% @restaurants.each do |restaurant| %>
+  <div class="card text-center" style="max-width: 30%; float: left; margin: 10px; display: inline-block;">
 
-  <!-- Heading -->
-  <div class="card-body">
-  <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant.id), :class => 'restaurant_name' %></h4>
-  <h6 class="card-subtitle text-muted"><%= restaurant.address %></h6>
+    <!-- Heading -->
+    <div class="card-body">
+      <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant.id), :class => 'restaurant_name' %></h4>
+      <h6 class="card-subtitle text-muted"><%= restaurant.address %></h6>
+    </div>
+
+    <!-- Image -->
+    <%= link_to image_tag(restaurant.pic_url), restaurant_path(restaurant.id), alt: "#{restaurant.name}", :class => 'card_image' %>
+
+    <!-- Text Content -->
+    <div class="card-body">
+      <p class="card-text"><%= restaurant.description %></p>
+      <%= link_to 'Reserve now!', restaurant_path(restaurant.id), :class => 'btn btn-danger' %>
+    </div>
+
   </div>
-
-  <!-- Image -->
-  <%= link_to image_tag(restaurant.pic_url), restaurant_path(restaurant.id), alt: "#{restaurant.name}", :class => 'card_image' %>
-
-  <!-- Text Content -->
-  <div class="card-body">
-  <p class="card-text"><%= restaurant.description %></p>
-  <%= link_to 'Reserve now!', restaurant_path(restaurant.id), :class => 'btn btn-danger' %>
-  </div>
-
-</div>
   <% end %>
+  
+</section>

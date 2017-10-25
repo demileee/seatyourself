@@ -1,6 +1,15 @@
+<div class="my-container2" id="restaurant-<%= @restaurant.id %>" style="padding: 100px 10%;">
+  <style>
+    .my-container2#restaurant-<%= @restaurant.id %>:before {
+      background-image: url('<%= @restaurant.pic_url %>');
+    }
+  </style>
+  <h3 class="card-title-restaurant2"><%= @restaurant.name %></h3>
+  <p class="card-title-restaurant2">
+    <%= @restaurant.address %>
+  </p>
+</div>
 
-<h3 style="text-align:center;"><%= @restaurant.name %></h3>
-<p style="text-align:center;"><%= @restaurant.address %></p>
-<p style="text-align:center;"><%= @restaurant.description %></p>
-
-<%= render 'reservations/form' %>
+<section>
+  <%= render 'reservations/form' %>
+</section>

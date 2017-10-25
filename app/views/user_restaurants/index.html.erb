@@ -1,3 +1,4 @@
+<section>
 <h2>All my restaurants |
   <% if current_user &&  current_user.role == 'owner'%>
   <%= link_to 'Create Restaurant', new_restaurant_path, :class => 'btn btn-danger' %>
@@ -53,3 +54,4 @@
 
 <% end %>
 <% end %>
+</section>

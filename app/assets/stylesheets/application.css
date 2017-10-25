@@ -14,9 +14,10 @@
  *= require_self
  */
 
-main {
-  margin: 10px;
+section {
+  padding: 3rem;
 }
+
 a.restaurant_name {
   font-size: 30px;
   text-decoration: none;
@@ -33,6 +34,14 @@ a.restaurant_name {
 }
 
 .card-title-restaurant {
+  text-align: right;
+  color: white;
+  z-index: 2;
+  position: relative;
+  padding-right: 20px;
+}
+
+.card-title-restaurant2 {
   text-align: right;
   color: white;
   z-index: 2;
@@ -64,6 +73,30 @@ a.restaurant_name {
     background-size: cover;
 }
 
+.my-container2 {
+    position: relative;
+    background: rgb(78, 8, 31);
+    overflow: hidden;
+}
+.my-container2:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
 .form-centered {
   width: 40%;
   margin: 0 auto;
@@ -71,6 +104,17 @@ a.restaurant_name {
 
 .alert {
   margin: 0;
+}
+
+.banner-img {
+  display: block;
+  max-width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.banner-img img {
+  width: 100%;
 }
 /*nav {
   padding-left: 20px;
