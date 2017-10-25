@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-include ApplicationHelper
+  include ApplicationHelper
 
   def index
     @restaurants = Restaurant.where("id = ?", params[:restaurant_id])

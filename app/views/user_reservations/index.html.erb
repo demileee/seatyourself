@@ -1,4 +1,6 @@
 <h1>Your Reservations</h1>
+
+<%= "No reservations" if @reservations.empty? %>
 <% @reservations.each do |reservation| %>
 <div class="card text-center" style="max-width: 30%; float: left; margin: 10px; display: inline-block;">
 

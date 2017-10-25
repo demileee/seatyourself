@@ -9,15 +9,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if flash[:notice]%>
-        <div class="alert alert-warning"><%= flash[:notice] %></div>
-  <% elsif flash[:alert] %>
-
-        <div class="alert alert-danger"><%= flash[:alert] %></div>
-  <% elsif flash[:success] %>
-
-        <div class="alert alert-success"><%= flash[:success] %></div>
-  <% end %>
 <nav class="navbar navbar-expand-md navbar-dark bg-danger">
     <a href="/" class="navbar-brand">Sit Down</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
@@ -50,7 +41,15 @@
         </ul>
     </div>
 </nav>
-</div>
+<% if flash[:notice]%>
+      <div class="alert alert-warning"><%= flash[:notice] %></div>
+<% elsif flash[:alert] %>
+
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+<% elsif flash[:success] %>
+
+      <div class="alert alert-success"><%= flash[:success] %></div>
+<% end %>
 <main>
 <%= yield %>
 </main>
