@@ -32,7 +32,7 @@ a.restaurant_name {
   display: none;
 }
 
-.card-title {
+.card-title-restaurant {
   text-align: right;
   color: white;
   z-index: 2;
