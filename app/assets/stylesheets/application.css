@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
 main {
   margin: 10px;
 }
@@ -20,7 +21,6 @@ a.restaurant_name {
   font-size: 30px;
   text-decoration: none;
   color: #dc3545;
-
 }
 
 .card_image img {

@@ -3,6 +3,7 @@
 <head>
   <title>SitDown</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -40,7 +41,7 @@
             <% if current_user.role == 'owner' %>
             <li class="nav-item"><%= link_to "My Restaurants", user_user_restaurants_path(current_user.id), :class => 'nav-link' %></li>
             <% end %>
-            <li class="nav-item"><%= link_to "Settings", user_path(current_user.id), :class => 'nav-link' %>
+            <li class="nav-item"><%= link_to icon('cog', class: 'strong'), user_path(current_user.id), :class => 'nav-link' %>
             </li>
             <% else %>
             <li class="nav-item"><%= link_to "Log in", new_sessions_path, :class => 'nav-link' %></li>
