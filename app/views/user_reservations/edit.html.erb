@@ -1,0 +1,28 @@
+<h1>Edit this reservation</h1>
+  <%= form_for :res, url: user_user_reservation_path(params[:user_id], params[:id]), method: :patch do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', :value => @reservation.name%>
+  </div>
+  <div class="form-group">
+    <%= f.label "Date" %>
+    <%= f.date_field :date, class: 'form-control', :value => fulldate(@reservation.date_time) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :time %>
+    <%= f.time_select :time, class: 'form-control', minute_step: 15, :default => {:hour => @reservation.date_time.hour, :minute => @reservation.date_time.min}  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control', :value => @reservation.email %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes %>
+    <%= f.text_field :notes, class: 'form-control', :value => @reservation.notes  %>
+  </div>
+  <div class="form-group">
+    <%= f.submit 'Edit Reservation', :class => 'btn btn-primary' %>
+
+  </div>
+<% end %>
