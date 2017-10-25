@@ -15,8 +15,19 @@
  */
 main {
   margin: 10px;
-/*}
-nav {
+}
+a.restaurant_name {
+  font-size: 30px;
+  text-decoration: none;
+  color: #dc3545;
+
+}
+
+.card_image img {
+  width: 100%;
+}
+
+/*nav {
   padding-left: 20px;
 }
 .nav_item {

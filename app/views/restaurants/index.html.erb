@@ -4,17 +4,17 @@
 
   <!-- Heading -->
   <div class="card-body">
-  <h4 class="card-title"><%= restaurant.name %></h4>
+  <h4 class="card-title"><%= link_to restaurant.name, restaurant_path(restaurant.id), :class => 'restaurant_name' %></h4>
   <h6 class="card-subtitle text-muted"><%= restaurant.address %></h6>
   </div>
 
   <!-- Image -->
-  <img style="max-width: 100%;" src="<%= restaurant.pic_url %>" alt="<%= restaurant.name %>">
+  <%= link_to image_tag(restaurant.pic_url), restaurant_path(restaurant.id), alt: "#{restaurant.name}", :class => 'card_image' %>
 
   <!-- Text Content -->
   <div class="card-body">
   <p class="card-text"><%= restaurant.description %></p>
-  <%= link_to 'Reserve now!', restaurant_path(restaurant.id), :class => 'btn btn-primary' %>
+  <%= link_to 'Reserve now!', restaurant_path(restaurant.id), :class => 'btn btn-danger' %>
   </div>
 
 </div>
