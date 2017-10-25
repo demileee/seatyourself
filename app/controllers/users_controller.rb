@@ -29,6 +29,7 @@ class UsersController < ApplicationController
 
     if @user
       redirect_to user_path(@user.id)
+      flash[:success] = "Info updated successfully!"
     else
       flash[:alert] = "Update unsuccessful."
       render :new
