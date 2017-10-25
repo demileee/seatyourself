@@ -40,4 +40,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
   helper_method :ensure_logged_in
+  helper_method :ensure_ownership
+  helper_method :ensure_user
 end
